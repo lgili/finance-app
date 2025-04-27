@@ -1,0 +1,27 @@
+<div class="min-h-screen flex items-center justify-center bg-background px-4 py-12">
+  <div class="max-w-md w-full bg-white dark:bg-gray-800 p-8 rounded shadow">
+    <h2 class="text-center text-2xl font-extrabold text-primary mb-6">
+      Entrar no Finance App
+    </h2>
+
+    <%= form_with(scope: :user, url: session_path(:user), local: true, class: "space-y-6") do |f| %>
+      <div>
+        <%= f.label :email, "Email", class: "block text-sm font-medium text-primary" %>
+        <%= f.email_field :email, autofocus: true, required: true, class: "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-background placeholder-gray-500 text-primary focus:outline-none focus:ring-primary-light focus:border-primary-light sm:text-sm" %>
+      </div>
+
+      <div>
+        <%= f.label :password, "Senha", class: "block text-sm font-medium text-primary" %>
+        <%= f.password_field :password, required: true, class: "appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-background placeholder-gray-500 text-primary focus:outline-none focus:ring-primary-light focus:border-primary-light sm:text-sm" %>
+      </div>
+
+      <div>
+        <%= f.submit "Entrar", class: "bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded w-full" %>
+      </div>
+    <% end %>
+
+    <div class="mt-6 text-center">
+      <%= link_to "Criar Conta", new_user_registration_path, class: "text-sm text-primary hover:text-primary-light" %>
+    </div>
+  </div>
+</div>
